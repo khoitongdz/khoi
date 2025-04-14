@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Loading Data...</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+      background: #000;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      background-size: 600% 600%;
+      animation: gradientBG 10s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .loader-box {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(30px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 30px;
+      padding: 60px;
+      text-align: center;
+      box-shadow: 0 0 80px rgba(0, 255, 255, 0.2);
+      animation: floatBox 6s ease-in-out infinite;
+    }
+
+    @keyframes floatBox {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    .neon-ring {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 30px;
+      border-radius: 50%;
+      border: 8px solid transparent;
+      border-top: 8px solid #00fff7;
+      animation: spin 1.5s linear infinite, glow 2s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7; }
+      50% { box-shadow: 0 0 30px #00fff7, 0 0 60px #00fff7; }
+    }
+
+    .loading-text {
+      font-size: 28px;
+      font-weight: bold;
+      color: #ffffff;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px #00fff7, 0 0 25px #00fff7;
+      animation: pulseText 2s infinite;
+    }
+
+    @keyframes pulseText {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.05); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loader-box">
+    <div class="neon-ring"></div>
+    <div class="loading-text">Loading Data...</div>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      window.location.href = "https://khoitongdz.github.io/Cloud/";
+    }, 5000);
+  </script>
+
+</body>
+</html>
